@@ -6,18 +6,15 @@ import org.springframework.stereotype.Service;
 public class FizzBuzz {
 
     public String validateNumberFizzBuzz(int number){
-
-        if(number%3==0 && number%5==0){
-            return "FizzBuzz";
-        }
+        String result = "";
 
         if(number%3==0){
-            return "Fizz";
+            result+= "Fizz";
         }
         if(number%5==0){
-            return "Buzz";
+            result += "Buzz";
         }
 
-        return String.valueOf(number);
+        return result.isEmpty() ? String.valueOf(number) : result;
     }
 }
